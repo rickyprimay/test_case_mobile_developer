@@ -5,8 +5,8 @@ import 'package:game_list_app/view_model/favoritesGame/favorite_game_view_model.
 import 'package:provider/provider.dart';
 
 class FavoriteScreen extends StatelessWidget {
-  const FavoriteScreen({super.key});
   
+  const FavoriteScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +63,7 @@ class FavoriteScreen extends StatelessWidget {
               final favoriteGames = viewModel.favoriteGames;
 
               if (favoriteGames.isEmpty) {
-                return Center(child: Text('No favorite games found.'));
+                return Center(child: Text('No favorite games found.', style: TextStyle(color: Colors.white)));
               }
 
               return ListView.builder(
