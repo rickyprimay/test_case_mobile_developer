@@ -54,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
         },
         appBarBuilder: (context) {
           return AppBar(
-            title: Text("Game List", style: TextStyle(fontSize: 20, fontFamily: "Quicksand", fontWeight: FontWeight.w600)),
+            title: Text("Game List", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600)),
             backgroundColor: Colors.transparent,
             actions: [
               AppBarSearchButton(),

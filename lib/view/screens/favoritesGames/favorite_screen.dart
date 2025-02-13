@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:game_list_app/view/screens/home/widget/result_game_card.dart';
 import 'package:game_list_app/view/shared/background.dart';
@@ -13,7 +12,7 @@ class FavoriteScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Favorites Games", style: TextStyle(fontSize: 20, fontFamily: "Quicksand", fontWeight: FontWeight.w600)),
+        title: Text("Favorites Games", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600)),
         backgroundColor: Colors.transparent,
       ),
       body: Stack(

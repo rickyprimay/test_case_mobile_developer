@@ -11,7 +11,6 @@ class SectionTitle extends StatelessWidget {
     child: Text(
       title,
       style: const TextStyle(
-        fontFamily: "Quicksand", 
         fontSize: 25,
         fontWeight: FontWeight.w500,
         color: Colors.white,
