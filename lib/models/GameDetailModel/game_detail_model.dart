@@ -1,15 +1,17 @@
 class GameDetail {
-  // ignore: non_constant_identifier_names
-  final String description_raw;
+  final String descriptionRaw;
 
-  GameDetail({
-    // ignore: non_constant_identifier_names
-    required this.description_raw
-  });
+  GameDetail({required this.descriptionRaw});
 
   factory GameDetail.fromJson(Map<String, dynamic> json) {
     return GameDetail(
-      description_raw: json['description_raw'] ?? 'Unknown',
+      descriptionRaw: json['description_raw'] as String? ?? '',
     );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'description_raw': descriptionRaw,
+    };
   }
 }

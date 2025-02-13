@@ -1,6 +1,7 @@
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:game_list_app/models/GameModel/game_model.dart';
+import 'package:game_list_app/view/screens/gameDetail/game_detail_screen.dart';
 import 'package:game_list_app/view_model/favoritesGame/favorite_game_view_model.dart';
 import 'package:provider/provider.dart';
 import 'package:toast/toast.dart';
@@ -18,7 +19,24 @@ class GameCard extends StatelessWidget {
         bool isFavorite = viewModel.isFavorite(game);
 
         return GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ChangeNotifierProvider(
+                  create: (_) => FavoriteGameViewModel(), 
+                  child: GameDetailScreen(
+                    gameId: game.id,
+                    gameName: game.name,
+                    gameBackgroundImage: game.backgroundImage,
+                    gameRating: game.rating.toStringAsFixed(2),
+                    gameReleased: game.released,
+                    gameScreenshots: game.shortScreenshots,
+                  ),
+                ),
+              ),
+            );
+          },
           child: Card(
             color: Colors.grey[850],
             shape: RoundedRectangleBorder(

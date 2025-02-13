@@ -1,5 +1,6 @@
 import 'package:game_list_app/data/remote/network/api_end_points.dart';
 import 'package:game_list_app/data/remote/network/network_api_service.dart';
+import 'package:game_list_app/models/GameDetailModel/game_detail_model.dart';
 import 'package:game_list_app/models/GameModel/game_model.dart';
 import 'package:logger/logger.dart';
 
@@ -12,7 +13,7 @@ class GameRepo {
   Future<GameResult> getGamesList({int page = 1, int pageSize = 20}) async {
     try {
       final url = _apiEndPoints.gamesList(page: page, pageSize: pageSize);
-      // logger.i(url);
+      logger.i(url);
       final response = await _networkApiService.getResponse(url);
       // logger.i(response);
       return GameResult.fromJson(response);
@@ -27,6 +28,18 @@ class GameRepo {
       final response = await _networkApiService.getResponse(url);
       // logger.i(response);
       return GameResult.fromJson(response);
+    } catch (e) {
+      throw Exception('Failed to load games: $e');
+    }
+  }
+
+  Future<GameDetail> getGameDetail(int id) async {
+    try {
+      final url = _apiEndPoints.gameDetail(id);
+      logger.i(url);
+      final response = await _networkApiService.getResponse(url);
+      logger.i(response);
+      return GameDetail.fromJson(response);
     } catch (e) {
       throw Exception('Failed to load games: $e');
     }

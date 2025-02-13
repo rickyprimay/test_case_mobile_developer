@@ -8,6 +8,7 @@ import 'package:game_list_app/view/screens/home/widget/list_random_game.dart';
 import 'package:game_list_app/view/screens/home/widget/result_game_card.dart';
 import 'package:game_list_app/view/screens/home/widget/list_random_for_you_game.dart';
 import 'package:game_list_app/view/screens/home/widget/section_title.dart';
+import 'package:game_list_app/view/shared/background.dart';
 import 'package:game_list_app/view/shared/loading_widget.dart';
 import 'package:game_list_app/view/shared/my_text_view.dart';
 import 'package:game_list_app/view_model/home/home_view_model.dart';
@@ -63,47 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: Stack(
         children: [
-          Positioned.fill(
-            child: Container(
-              color: Colors.blueGrey[800],
-            ),
-          ),
-          Align(
-            alignment: const Alignment(1.2, -0.3),
-            child: Container(
-              height: 300,
-              width: 300,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.blueGrey[400],
-              ),
-            ),
-          ),
-          Align(
-            alignment: const Alignment(-1.2, -0.3),
-            child: Container(
-              height: 300,
-              width: 300,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.blueGrey[500],
-              ),
-            ),
-          ),
-          Align(
-            alignment: const Alignment(0, -1.2),
-            child: Container(
-              height: 300,
-              width: 600,
-              decoration: BoxDecoration(color: Colors.blueGrey[600]),
-            ),
-          ),
-          BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 100.0, sigmaY: 100.0),
-            child: Container(
-              color: Colors.transparent,
-            ),
-          ),
+          Background(),
           if (query.isEmpty) 
           SingleChildScrollView(
             child: Column(
