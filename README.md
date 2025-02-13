@@ -17,8 +17,8 @@ For Test Case Internship Mobile Developer - CAN Creative
 
 1. **Clone the repository**
    ```sh
-   git clone https://github.com/your-username/game_list_app.git
-   cd game_list_app
+   git clone https://github.com/rickyprimay/test_case_mobile_developer.git
+   cd test_case_mobile_developer
    ```
 2. **Install dependencies**
    ```sh
