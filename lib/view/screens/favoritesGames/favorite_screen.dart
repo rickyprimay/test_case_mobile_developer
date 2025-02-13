@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:game_list_app/view/screens/home/widget/result_game_card.dart';
 import 'package:game_list_app/view/shared/background.dart';
 import 'package:game_list_app/view_model/favoritesGame/favorite_game_view_model.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class FavoriteScreen extends StatelessWidget {
@@ -12,7 +13,7 @@ class FavoriteScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Favorites Games", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600)),
+        title: Text("Favorites Games", style: GoogleFonts.quicksand(fontSize: 20, fontWeight: FontWeight.w700)),
         backgroundColor: Colors.transparent,
       ),
       body: Stack(
@@ -23,7 +24,7 @@ class FavoriteScreen extends StatelessWidget {
               final favoriteGames = viewModel.favoriteGames;
 
               if (favoriteGames.isEmpty) {
-                return Center(child: Text('No favorite games found.', style: TextStyle(color: Colors.white)));
+                return Center(child: Text('No favorite games found.', style: GoogleFonts.quicksand(color: Colors.white, fontWeight: FontWeight.w500)));
               }
 
               return ListView.builder(

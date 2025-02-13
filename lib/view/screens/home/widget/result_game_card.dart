@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:game_list_app/models/GameModel/game_model.dart';
 import 'package:game_list_app/view/screens/gameDetail/game_detail_screen.dart';
 import 'package:game_list_app/view_model/favoritesGame/favorite_game_view_model.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:toast/toast.dart';
 
@@ -63,11 +64,7 @@ class ResultGameCard extends StatelessWidget {
                             Expanded(
                               child: Text(
                                 game.name,
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                                style: GoogleFonts.quicksand(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18),
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                               ),
@@ -94,10 +91,7 @@ class ResultGameCard extends StatelessWidget {
                           children: [
                             Text(
                               game.rating.toStringAsFixed(2),
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                              ),
+                              style: GoogleFonts.quicksand(color: Colors.white, fontWeight: FontWeight.w400),
                             ),
                             const SizedBox(width: 4),
                             ...List.generate(
@@ -115,10 +109,7 @@ class ResultGameCard extends StatelessWidget {
                         const SizedBox(height: 4),
                         Text(
                           "Released: ${game.released}",
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                          ),
+                          style: GoogleFonts.quicksand(color: Colors.white, fontSize: 14),
                         ),
                       ],
                     ),

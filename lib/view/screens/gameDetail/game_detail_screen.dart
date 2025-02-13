@@ -6,7 +6,9 @@ import 'package:game_list_app/models/GameDetailModel/game_detail_model.dart';
 import 'package:game_list_app/data/remote/response/api_response.dart';
 import 'package:game_list_app/view/screens/gameDetail/widget/build_rating_stars.dart';
 import 'package:game_list_app/view/shared/background.dart';
+import 'package:game_list_app/view/shared/loading_widget.dart';
 import 'package:game_list_app/view_model/detailGame/detail_game_view_model.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class GameDetailScreen extends StatefulWidget {
   final int gameId;
@@ -68,7 +70,7 @@ class _GameDetailScreenState extends State<GameDetailScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        title: Text(widget.gameName),
+        title: Text(widget.gameName, style: GoogleFonts.quicksand(fontSize: 20, fontWeight: FontWeight.w700)),
       ),
       body: Stack(
         children: [
@@ -100,31 +102,23 @@ class _GameDetailScreenState extends State<GameDetailScreen> {
                   children: [
                     Text(
                       widget.gameName,
-                      style: TextStyle(
-                        color: Colors.black,
+                      style: GoogleFonts.quicksand(color: Colors.black,
                         fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                      ),
+                        fontSize: 20,)
                     ),
                     SizedBox(height: 10),
                     Row(
                       children: [
                         Text(
                           widget.gameRating,
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                          ),
+                          style: GoogleFonts.quicksand(color: Colors.black, fontWeight: FontWeight.bold,)
                         ),
                         SizedBox(width: 5),
                         BuildRatingStars(rating: double.parse(widget.gameRating)),
                         Spacer(),
                         Text(
                           "Released: ${widget.gameReleased}",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 14,
-                          ),
+                          style: GoogleFonts.quicksand(color: Colors.black, fontSize: 14)
                         ),
                       ],
                     ),
@@ -137,7 +131,7 @@ class _GameDetailScreenState extends State<GameDetailScreen> {
                       future: fetchGameDetail(widget.gameId),
                       builder: (context, snapshot) {
                         if (snapshot.connectionState == ConnectionState.waiting) {
-                          return CircularProgressIndicator();
+                          return LoadingWidget();
                         } else if (snapshot.hasError) {
                           return Text('Error: ${snapshot.error}');
                         } else if (!snapshot.hasData || snapshot.data?.data == null) {
@@ -146,10 +140,7 @@ class _GameDetailScreenState extends State<GameDetailScreen> {
                           final gameDetail = snapshot.data!.data!;
                           return Text(
                             gameDetail.descriptionRaw,
-                            style: TextStyle(
-                              color: Colors.grey,
-                              height: 1.5,
-                            ),
+                            style: GoogleFonts.quicksand(color: Colors.grey, fontSize: 14)
                           );
                         }
                       },

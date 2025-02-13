@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:game_list_app/models/GameModel/game_model.dart';
 import 'package:game_list_app/view/screens/gameDetail/game_detail_screen.dart';
 import 'package:game_list_app/view_model/favoritesGame/favorite_game_view_model.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:toast/toast.dart';
 
@@ -70,11 +71,7 @@ class GameCard extends StatelessWidget {
                           Expanded(
                             child: Text(
                               game.name,
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w400,
-                                fontSize: 16,
-                              ),
+                              style: GoogleFonts.quicksand(color: Colors.white, fontWeight: FontWeight.w400, fontSize: 16),
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                             ),
@@ -100,10 +97,7 @@ class GameCard extends StatelessWidget {
                         children: [
                           Text(
                             game.rating.toStringAsFixed(2),
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                            ),
+                            style: GoogleFonts.quicksand(color: Colors.white, fontWeight: FontWeight.bold),
                           ),
                           const SizedBox(width: 4),
                           ...List.generate(

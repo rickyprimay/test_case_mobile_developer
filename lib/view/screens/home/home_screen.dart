@@ -12,6 +12,7 @@ import 'package:game_list_app/view/shared/background.dart';
 import 'package:game_list_app/view/shared/loading_widget.dart';
 import 'package:game_list_app/view/shared/my_text_view.dart';
 import 'package:game_list_app/view_model/home/home_view_model.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:toast/toast.dart';
 
@@ -54,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
         },
         appBarBuilder: (context) {
           return AppBar(
-            title: Text("Game List", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600)),
+            title: Text("Game List", style: GoogleFonts.quicksand(color: Colors.black, fontWeight: FontWeight.w700, fontSize: 20,)),
             backgroundColor: Colors.transparent,
             actions: [
               AppBarSearchButton(),
